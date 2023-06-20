@@ -1,36 +1,34 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
-*/
-int main(void)
-{
-int i;
+ * times_table - prints time table for no. 9
+ */
 
-for (i = 1; i <= 100; i++)
+void times_table(void)
 {
-if (i % 3 == 0 && i % 5 == 0)
-{
-printf("FizzBuzz ");
-}
-else if (i % 3 == 0)
-{
-printf("Fizz ");
-}
-else if (i % 5 == 0)
-{
-printf("Buzz ");
-}
-else
-{
-printf("%d ", i);
-}
-}
+	int num;
+	int multiply;
+	int product;
 
-printf("\n");
+	for (num = 0; num <= 9; num++)
+	{
+		_putchar('0');
 
-return (0);
+
+		for (multiply = 1; multiply <= 9; multiply++)
+		{
+		_putchar(',');
+		_putchar(' ');
+
+		product = num * multiply;
+
+		if (product <= 9)
+			_putchar(' ');
+		else
+			_putchar('0' + (product / 10));
+		_putchar('0' + (product % 10));
+		}
+
+		_putchar('\n');
+	}
 }
-
